@@ -128,6 +128,15 @@
 
             tap-ms = <20>;
         };
+
+        mt_z: mod_tap_z {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";  // ★キーを離した時は必ずTap（Z）を優先する
+            tapping-term-ms = <230>;    // ★Tapとみなす時間を230ms程度に少し延ばす
+            quick-tap-ms = <150>;       // Zの連打（zzなど）をスムーズにする
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     keymap {
